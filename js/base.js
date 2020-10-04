@@ -68,6 +68,7 @@ function createInput(type, id, br, dis, divid) {
         var label = document.createElement('label')
         label.style = "display: inline-block; margin-left: 5px; color: green;"
         label.id = "l" + id
+        label.className = "verified"
         document.getElementById(divID).appendChild(table)
         document.getElementById(divID).appendChild(label);
     } else {

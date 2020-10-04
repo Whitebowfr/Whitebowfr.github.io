@@ -29,7 +29,6 @@ body {
 
 #title {
     height: 55px;
-    width: 25%;
     background-color: #00ccc2;
     display: block;
     margin-left: auto;
@@ -42,7 +41,6 @@ body {
     font-family:  'Helvetica Neue', sans-serif;
     letter-spacing: -1px;
     line-height: 1;
-    font-size: 50px;
     border: 2px solid #fff;
 }
 
@@ -61,7 +59,7 @@ body {
     background-color: #00ccc2;
 }
 
-#translations, #calculator {
+.main {
     transform: translateY(37px);
     width: 66%;
     margin-left: auto;
@@ -98,7 +96,6 @@ body {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-    width: 200px;
     position: relative;
     display: inline-block;
     border: 2px solid #fff;
@@ -124,30 +121,11 @@ body {
 .navbarItem:not(#bckgrndCheck)::before{
     transform: rotate(7deg);
     content: "";
-    width: 120%;
-    height: 250%;
     background-color: #fff;
     position: absolute;
     transition: all 0.5s ease;
 }
 
-.btn1::before{
-    left: 180px;
-    top: -20px;
-}
-
-.btn2::before {
-    left: -220px;
-    top: -20px;
-}
-
-.btn1:hover::before{
-    left: -2px;
-}
-
-.btn2:hover::before {
-    left: -2px;
-}
 
 .navbarItem:not(#bckgrndCheck):hover p{
     color: #00bfb6;
@@ -249,4 +227,119 @@ input.disabled {
 
 #keepBubbles:checked::before {
     opacity: 1;
+}
+
+@media (min-width:1281px){ /* 1080p+ monitors */
+    .navbarItem {
+        width: 11%;
+    }
+
+    #title {
+        width: 25%;
+        font-size: 50px;
+    }
+
+    .navbarItem:not(#bckgrndCheck)::before{
+        width: 120%;
+        height: 250%;
+    }
+    
+    .btn1::before{
+        left: 180px;
+        top: -20px;
+    }
+    
+    .btn2::before {
+        left: -220px;
+        top: -20px;
+    }
+    
+    .btn1:hover::before{
+        left: -2px;
+    }
+    
+    .btn2:hover::before {
+        left: -2px;
+    }
+}
+
+@media (max-width:1280px) and (min-width:1024px) { /* strange resolutions monitors */
+    .navbarItem:not(#bckgrndCheck)::before{
+        width: 200%;
+        height: 290%;
+    }
+
+    #title {
+        width: 50%;
+        font-size: 50px;
+    }
+    
+    .btn1::before{
+        left: 350px;
+        top: 0px;
+    }
+    
+    .btn2::before {
+        left: -750px;
+        top: -90px;
+    }
+    
+    .btn1:hover::before{
+        left: -2px;
+        top: 0px;
+    }
+    
+    .btn2:hover::before {
+        left: -2px;
+        top: 0px;
+    }
+}
+
+@media (max-width:1023px) { /* phones */
+    .navbarItem:not(#bckgrndCheck):hover p{
+        color: #fff;
+    }
+
+    #title {
+        height: 100%;
+        width: 100%;
+        font-size: 9vw;
+        border-bottom: none;
+    }
+
+    #titleMask {
+        display: none;
+    }
+
+    #header {
+        height: 36px;
+    }
+
+    #navbar {
+        margin-top: 0px;
+    }
+    #bckgrndCheck, #particles-js {
+        display: none;
+    }
+
+    .main {
+        margin-top: 3px;
+        width: 90%;
+    }
+
+    input {
+        width: 49%;
+        left: 0px;
+    }
+
+    input.disabled {
+        margin-left: 5px;
+        width: 40%;
+    }
+
+    .verified {
+        margin-bottom: 0px;
+        margin-left: 0px !important;
+        display: block;
+    }
 }
